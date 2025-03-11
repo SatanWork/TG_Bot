@@ -1,0 +1,7 @@
+telebot
+gspread
+oauth2client
+matplotlib
+numpy
+pandas
+python-dotenv
