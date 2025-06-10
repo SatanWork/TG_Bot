@@ -150,7 +150,7 @@ def generate_pie_chart(stats):
     labels, sizes, colors = [], [], []
     color_map = {
         "Бан приложения": "red",
-        "Появилось в сторе": "green",
+        "Приложение появилось в сторе": "green",
         "Загружено новое приложение": "blue",
         "Приложение вернулось в стор": "yellow"
     }
@@ -172,7 +172,7 @@ def generate_pie_chart(stats):
     buf.seek(0)
     return buf
 
-# 🤖 Команда /stats (исправлена)
+# 🤖 Команда /stats
 @bot.message_handler(commands=["stats"])
 def send_stats(message):
     user_id = str(message.from_user.id)
@@ -219,7 +219,7 @@ def send_stats(message):
 def start_bot():
     try:
         print("✅ Бот запущен. Ожидание сообщений...")
-        bot.polling(none_stop=True, timeout=60, long_polling_timeout=30)
+        bot.polling(none_stop=True, timeout=120, long_polling_timeout=100)
     except Exception as e:
         error_message = f"⚠️ Бот упал с ошибкой:\n```{traceback.format_exc()}```"
         print(error_message)
